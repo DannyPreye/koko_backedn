@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <%- include("../partial/header",title="About") %> <% let name ="Koko" %>
+        <% if(name=="koko") { %> hello <% }%> <% students.forEach((student)=>{
+        %>
+        <p><%- student.name %></p>
+        <p><%- student.level %></p>
+        <br />
+        <br />
+        <%})%>
+    </body>
+</html>

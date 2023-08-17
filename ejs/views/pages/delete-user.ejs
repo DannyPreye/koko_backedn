@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <%-include("../partial/header", title="Delete User" ) %>
+        <div class="container h-[80vh] mx-auto px-5 grid place-items-center">
+            <form
+                class="max-w-[550px] w-full gap-6 px-5 py-8 rounded-md bg-gray-500 flex flex-col items-stretch"
+                method="post"
+                name="delete"
+            >
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter student name"
+                    class="h-[46px] px-5 rounded-md focus:outline-none"
+                />
+                <input
+                    class="bg-blue-500 h-[46px] rounded-md font-semibold text-white"
+                    type="submit"
+                    value="Delete"
+                />
+            </form>
+        </div>
+        <script src="/js/delete-user.js"></script>
+    </body>
+</html>
