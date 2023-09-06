@@ -1,4 +1,17 @@
 const express = require("express");
+const formidable = require("formidable");
+const multer = require("multer");
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "upload/");
+    },
+    filename: function (req, file, cb) {
+        const suffix = Date.now();
+
+        cb(null, file.originalname);
+    },
+});
+const upload = multer({ storage: storage });
 // const ejs = require("ejs");
 
 const app = express();
@@ -91,6 +104,12 @@ app.get("/delete-user", (req, res) => {
     res.render("pages/delete-user");
 });
 
+app.get("/file-handler", (req, res) => {
+    res.render("pages/file-handler");
+});
+app.post("/file-handler", upload.single("profile_pic"), (req, res) => {
+    console.log(req.file);
+});
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
